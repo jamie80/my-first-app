@@ -11,6 +11,8 @@ export class ServersComponent {
   allowNewServer = false;
   serverCreationStatus = "No server was created";
   serverName ='Testserver';
+  serverCreated = false;
+  servers = [];
 
   constructor() {
     setTimeout(() => {
@@ -19,7 +21,9 @@ export class ServersComponent {
   }
 
   onCreateServer() {
-    this.serverCreationStatus = "Server was created. The name is " +this.serverName;
+    this.serverCreated = true;
+    this.servers.push(this.serverName);
+    // this.serverCreationStatus = "Server was created. The name is " +this.serverName;
   }
   // onUpdateServerName(event: Event) {
   //   this.serverName = (<HTMLInputElement>event.target).value;
